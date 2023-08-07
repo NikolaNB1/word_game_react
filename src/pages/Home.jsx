@@ -21,6 +21,13 @@ const Home = () => {
     setError("");
     setMessage("");
 
+    if (!word) {
+      setError("You must enter a word!");
+      resetWord();
+      setLoading(false);
+      return 0;
+    }
+
     if (word.length < 2) {
       setError("Word must be longer than 2 characters!");
       resetWord();
@@ -58,7 +65,7 @@ const Home = () => {
             width: "400px",
           }}
         >
-          <div className="card custom-card">
+          <div className="card">
             <div
               className="card-body text-center"
               style={{
